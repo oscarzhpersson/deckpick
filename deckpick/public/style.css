@@ -1,0 +1,6 @@
+.debug_center {
+    border: 5px solid #BEEEEF;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
