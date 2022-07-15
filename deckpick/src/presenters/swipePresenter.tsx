@@ -4,10 +4,21 @@ import React from 'react'
 // Component imports.
 import { SwipeView } from '../views/swipeView'
 import { StackGenerator } from '../api/stackGenerator';
+import { resolvePromises } from '../api/promiseHandler';
 
 function SwipePresenter(props: any)
 {
-    const [stack, set_stack] = React.useState(props.application_state.stack); //React.useState(props.application_state.get_stack()); //React.useState(StackGenerator({size: 5, prevent_duplicates: true}));
+    const [stack, set_stack] = React.useState([]); //React.useState(props.application_state.stack); //React.useState(props.application_state.get_stack());
+
+    var scryfall = require("scryfall-client");
+    
+    scryfall.random()
+            .then(function (card: any) {
+                return card;
+            })
+            .then((result: any) => {
+                set_stack([...stack, result]);
+            });
 
     const onSwipe = (direction: String) => {
         console.log('You swiped: ' + direction)
@@ -19,7 +30,7 @@ function SwipePresenter(props: any)
 
     return (
         <div>
-            <SwipeView stack={stack} onSwipe={onSwipe} onCardLeftScreen={onCardLeftScreen} />
+            {stack.length != 0 ? null : <SwipeView stack={stack} onSwipe={onSwipe} onCardLeftScreen={onCardLeftScreen} /> }
         </div>
     )
 }
