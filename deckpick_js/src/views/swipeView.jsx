@@ -23,8 +23,8 @@ function SwipeView(props)
                     onSwipe={props.onSwipe} 
                     onCardLeftScreen={props.onCardLeftScreen}
                     preventSwipe={['up', 'down']}
-                    swipeRequirementType='position'
-                    swipeThreshold={150}
+                    swipeRequirementType='velocity'
+                    swipeThreshold={400}
                     >
                     <Card isHoverable variant="flat" style={{ position: "relative", width: "20em", height: "27em", backgroundColor: "#dbd7d7" }} >
                         <Card.Image className='cardImage' src={data.image_uris.art_crop} />
