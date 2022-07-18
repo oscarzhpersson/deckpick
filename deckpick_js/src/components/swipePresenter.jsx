@@ -38,6 +38,8 @@ function SwipePresenter(props)
       
     const onCardLeftScreen = (myIdentifier) => {
         console.log(myIdentifier + ' left the screen');
+
+        // TODO: If card stack is empty, refill.
     }
 
     return (
