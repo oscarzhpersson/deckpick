@@ -4,10 +4,11 @@ import React from 'react'
 // Component imports.
 import { SwipeView } from '../views/swipeView'
 import { GenerateStack } from '../stackGenerator';
+import PromiseStateView from '../views/promiseStateView';
 
 function SwipePresenter(props)
 {
-    const [stack_promise, set_stack_promise] = React.useState(function initialise(){ return GenerateStack(5, true) });
+    const [stack_promise, set_stack_promise] = React.useState(function initialise(){ return GenerateStack(10, true) });
     const [stack_data, set_stack_data] = React.useState();
     const [stack_error, set_stack_error] = React.useState();
 
@@ -41,7 +42,8 @@ function SwipePresenter(props)
 
     return (
         <div>
-            {!stack_data ? null : <SwipeView stack={stack_data} onSwipe={onSwipe} onCardLeftScreen={onCardLeftScreen} /> }
+            {PromiseStateView({promise: stack_promise, data: stack_data, error: stack_error}) ||
+                <SwipeView stack={stack_data} onSwipe={onSwipe} onCardLeftScreen={onCardLeftScreen} /> }
         </div>
     )
 }
