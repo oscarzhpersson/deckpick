@@ -18,9 +18,16 @@ function SwipeView(props)
     {
         return (
             <div key={data.id} style={{ position: "absolute", right: "-10em", top: "-13.5em" }} >
-                <TinderCard className={"debug_center"} onSwipe={props.onSwipe} onCardLeftScreen={props.onCardLeftScreen} preventSwipe={['up', 'down']} >
+                <TinderCard 
+                    className={"debug_center"} 
+                    onSwipe={props.onSwipe} 
+                    onCardLeftScreen={props.onCardLeftScreen}
+                    preventSwipe={['up', 'down']}
+                    swipeRequirementType='position'
+                    swipeThreshold={150}
+                    >
                     <Card isHoverable variant="flat" style={{ position: "relative", width: "20em", height: "27em", backgroundColor: "#dbd7d7" }} >
-                        <Image src={data.image_uris.art_crop} />
+                        <Card.Image className='cardImage' src={data.image_uris.art_crop} />
                         <Text className='cardTitle' size={20} >{ data.name }</Text>
                     </Card>
                 </TinderCard>
