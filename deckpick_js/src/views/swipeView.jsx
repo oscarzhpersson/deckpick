@@ -1,7 +1,10 @@
 // Library imports.
 import React from 'react';
 import TinderCard from 'react-tinder-card';
-import { Card, Col, Row, Button, Text, Modal } from "@nextui-org/react";
+import { Card, Col, Row, Button, Text, Image } from "@nextui-org/react";
+
+// Component imports.
+import info_icon from '../assets/svg/icon_info.svg';
 
 function SwipeView(props)
 {
@@ -53,7 +56,7 @@ function SwipeView(props)
                                                 transform="uppercase"
                                                 >
                                                     View
-                                                </Text>
+                                            </Text>
                                         </Button>
                                     </Row>
                                 </Col>
