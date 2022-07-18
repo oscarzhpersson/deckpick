@@ -1,18 +1,13 @@
 // Library imports.
 import React from 'react';
 import TinderCard from 'react-tinder-card';
-
-import { Card } from "@nextui-org/react";
-import { Text } from '@nextui-org/react';
-import { Image } from '@nextui-org/react';
+import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
 function SwipeView(props)
 {
     // Exit case. If the promises have not resolved, return null.
     if (!props.stack)
         return null;
-
-    console.log(props.stack);
 
     function generateSwipeStack (data)
     {
@@ -45,7 +40,23 @@ function SwipeView(props)
                                 zIndex: 1,
                                 height: '15%'
                             }}>
-                            <Text color='white' size={20} >{ data.name }</Text>
+                                <Col>
+                                    <Text transform="uppercase" color='white' size={15} >{ data.name }</Text>
+                                </Col>
+                                <Col>
+                                    <Row justify="flex-end">
+                                        <Button flat auto rounded color='neutral' >
+                                            <Text
+                                                css={{ color: "inherit" }}
+                                                size={12}
+                                                weight="bold"
+                                                transform="uppercase"
+                                                >
+                                                    View
+                                                </Text>
+                                        </Button>
+                                    </Row>
+                                </Col>
                         </Card.Footer>
                     </Card>
                 </TinderCard>
