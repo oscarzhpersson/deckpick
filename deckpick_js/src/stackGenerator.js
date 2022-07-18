@@ -1,5 +1,3 @@
-import { getCard } from "scryfall-client/dist/api-routes/cards";
-
 function GetCard ()
 {
     var scryfall = require("scryfall-client");
@@ -10,19 +8,21 @@ function GetCard ()
             .then(function (result) {
                 return result;
             })
+            .catch((error) => {
+                // TODO: Add proper error handling.
+                console.log("ERROR: " + error);
+            })
 
     return card;
 }
 
 function GenerateStack (number, avoid_duplicates)
 {
-    var scryfall = require("scryfall-client");
-
     var stack = [];
     
     for (let i = 0; i < number; i++)
     {
-        var card = getCard();
+        var card = GetCard();
 
         if (stack.includes(card) && avoid_duplicates)
         {
@@ -31,7 +31,7 @@ function GenerateStack (number, avoid_duplicates)
 
         stack = [...stack, card];
     }
-    
+
     return stack;
 }
 

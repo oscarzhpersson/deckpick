@@ -8,14 +8,13 @@ function SwipeView(props)
     if (!props.stack)
         return null;
 
-    console.log("PROLOG4Life");
     console.log(props.stack);
 
     function generateSwipeStack (data)
     {
         return (
-            <div style={{ position: "absolute" }} >
-                <TinderCard key={data.id} className={"debug_center"} onSwipe={props.onSwipe} onCardLeftScreen={props.onCardLeftScreen} >
+            <div key={data.id} style={{ position: "absolute" }} >
+                <TinderCard className={"debug_center"} onSwipe={props.onSwipe} onCardLeftScreen={props.onCardLeftScreen} >
                     <div style={{ position: "relative", width: "20em", height: "25em", backgroundColor: "#4A4A4A" }} >
                         <img src={data.image_uris.normal} />
                         <a>{ data.name }</a>
