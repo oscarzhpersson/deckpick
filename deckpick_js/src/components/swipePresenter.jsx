@@ -40,6 +40,11 @@ function SwipePresenter(props)
         console.log(myIdentifier + ' left the screen');
 
         // TODO: If card stack is empty, refill.
+        var remaining = stack_data;
+        console.log(remaining.shift());
+
+        set_stack_data(remaining);
+        console.log(stack_data);
     }
 
     return (
