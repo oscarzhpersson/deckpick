@@ -1,0 +1,10 @@
+.swipeStack {
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
+}
+
+.cardTitle {
+  text-align: center;
+  padding-top: 3em;
+}
