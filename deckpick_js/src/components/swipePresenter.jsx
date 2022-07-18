@@ -1,18 +1,35 @@
 //Library imports.
 import React from 'react'
+import { Modal, Image } from "@nextui-org/react";
 
 // Component imports.
 import { SwipeView } from '../views/swipeView'
 import { GenerateStack } from '../stackGenerator';
 import PromiseStateView from '../views/promiseStateView';
 
-function SwipePresenter(props)
+function verifyStack (stack)
+{
+
+
+
+}
+
+function SwipePresenter (props)
 {
     const [stack_promise, set_stack_promise] = React.useState(function initialise(){ return GenerateStack(10, true) });
     const [stack_data, set_stack_data] = React.useState();
     const [stack_error, set_stack_error] = React.useState();
 
-    function onPromiseChangedACB()
+    const [show_image_modal, set_show_image_modal] = React.useState(false);
+    const [current_card, set_current_card] = React.useState();
+
+    function showFullImage (card)
+    {
+        set_show_image_modal(true);
+        set_current_card(card.image_uris.art_crop);
+    }
+
+    function onPromiseChangedACB ()
     {
         set_stack_data(null);
         set_stack_error(null);
@@ -50,7 +67,17 @@ function SwipePresenter(props)
     return (
         <div>
             {PromiseStateView({promise: stack_promise, data: stack_data, error: stack_error}) ||
-                <SwipeView stack={stack_data} onSwipe={onSwipe} onCardLeftScreen={onCardLeftScreen} /> }
+                <SwipeView
+                    stack={stack_data}
+                    showFullImage={showFullImage}
+                    onSwipe={onSwipe}
+                    onCardLeftScreen={onCardLeftScreen}
+                    show_image_modal={show_image_modal}
+                    current_card={current_card}
+                    /> }
+            <Modal noPadding blur aria-labelledby="modal-title" open={show_image_modal} onClose={() => set_show_image_modal(false)} >
+                { current_card ? <Image objectFit='fill' src={current_card} /> : null }
+            </Modal>
         </div>
     )
 }

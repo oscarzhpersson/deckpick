@@ -1,7 +1,7 @@
 // Library imports.
 import React from 'react';
 import TinderCard from 'react-tinder-card';
-import { Card, Col, Row, Button, Text } from "@nextui-org/react";
+import { Card, Col, Row, Button, Text, Modal } from "@nextui-org/react";
 
 function SwipeView(props)
 {
@@ -45,10 +45,10 @@ function SwipeView(props)
                                 </Col>
                                 <Col>
                                     <Row justify="flex-end">
-                                        <Button flat auto rounded color='neutral' >
+                                        <Button bordered rounded auto color='secondary' onClick={() => props.showFullImage(data)} >
                                             <Text
-                                                css={{ color: "inherit" }}
-                                                size={12}
+                                                css={{ color: "white" }}
+                                                size={15}
                                                 weight="bold"
                                                 transform="uppercase"
                                                 >
