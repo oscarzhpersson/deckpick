@@ -1,8 +1,16 @@
+:root {
+  background-color: #FFFFFF;
+}
+
 .swipeStack {
     z-index: 1000;
     position: fixed; /* or absolute */
     top: 50%;
     left: 50%;
+}
+
+.overlayed {
+  z-index: 1;
 }
 
 .cardImage {
