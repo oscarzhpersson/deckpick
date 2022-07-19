@@ -4,7 +4,6 @@ import TinderCard from 'react-tinder-card';
 import { Card, Col, Row, Button, Text, Image } from "@nextui-org/react";
 
 // Component imports.
-import info_icon from '../assets/svg/icon_info.svg';
 
 function SwipeView(props)
 {
