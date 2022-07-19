@@ -1,7 +1,3 @@
-// Component imports.
-import { GetCard, GenerateStack } from "../stackGenerator";
-import { resolvePromise, resolvePromises } from "../promiseHandler";
-
 export default class StackState
 {
 
