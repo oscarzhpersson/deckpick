@@ -16,7 +16,7 @@ function App(props) {
             <img src={logo} className='overlayed' style={{ position: 'absolute', width: '5em', left: '1%', top: '2%' }} />
           </Col>
           <Col>
-            <Text h4 weight='light' className='overlayed' css={{ position: 'fixed', top: '4.9%', left: '6.5%', color: 'White' }} >DECKPICK</Text>
+            <Text h4 weight='light' className='overlayed' css={{ position: 'absolute', top: '9%', left: '4.5%', color: 'White' }} >DECKPICK</Text>
           </Col>
         </div>
         <img className='unselectable' src={image} css={{ position: 'relative', width: '100vw', top: '-20%' }} />
