@@ -12,7 +12,7 @@ function App(props) {
     <NextUIProvider>
       <div>
         <div>
-          <Col>
+          <Col justify="flex-end">
             <img src={logo} className='overlayed' style={{ position: 'absolute', width: '5em', left: '1%', top: '2%' }} />
           </Col>
           <Col>
