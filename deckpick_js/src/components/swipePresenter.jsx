@@ -67,13 +67,17 @@ function SwipePresenter (props)
 
         console.log('You swiped: ' + direction + ' on ' + id);
 
+        if (direction === 'right')
+        {
+            props.stack_state.saveCard(id);
+        }
+
         counter--;
     }
       
     const onCardLeftScreen = (myIdentifier) => {
-        console.log(myIdentifier + ' left the screen');
-
-        // TODO: If card stack is empty, refill.
+        
+        //console.log(myIdentifier + ' left the screen');
 
         if (counter <= 0)
         {

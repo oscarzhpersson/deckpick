@@ -5,29 +5,17 @@ import { resolvePromise, resolvePromises } from "../promiseHandler";
 export default class StackState
 {
 
-    constructor (stack = [], stackPromiseState = {})
+    constructor (deck = [])
     {
-        this.stack = stack;//GenerateStack(5, true);
-        this.stackPromiseState = stackPromiseState;
+        this.deck = deck;
     }
 
-    getStack ()
+    saveCard (card_id)
     {
-        if (!this.stack || this.stack.length <= 0)
-        {
-            resolvePromises(GenerateStack(5, true), this.stackPromiseState);
-            this.stack = this.stackPromiseState.data;
-        }
+        this.deck = [...this.deck, card_id];
 
-        return this.stack;
-    }
-
-    fillStack ()
-    {
-        var promiseState = {promise: null, data: null, error: null}
-        resolvePromises( GenerateStack(5, true), promiseState );
-
-        return promiseState.data;
+        // TODO: Remove print statement later.
+        console.log(this.deck);
     }
 
 }

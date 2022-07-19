@@ -15,7 +15,7 @@ function PromiseStateView(promise_state)
 
     // Promise parts are redundant here, but kept to maintain consistency.
     if(promise && !data && !error)
-        return <div id="promiseData" className="loadingScreen"><Loading size="xl" /></div>;
+        return <div id="promiseData" /*css={{ position: 'absolute',  top: '50%', bottom: '50%' }}*/ ><Loading size="xl" /></div>;
 
     if(promise && !data && error)
     {
