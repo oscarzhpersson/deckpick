@@ -19,7 +19,7 @@ function App(props) {
             <Text h4 weight='light' className='overlayed' css={{ position: 'fixed', top: '4.9%', left: '6.5%', color: 'White' }} >DECKPICK</Text>
           </Col>
         </div>
-        <img src={image} css={{ position: 'relative', width: '100%', top: '-20%' }} />
+        <img src={image} css={{ position: 'relative', width: '100vw', top: '-20%' }} />
         <div className='swipeStack' >
           <SwipePresenter stack_state={props.stack_state} />
         </div>

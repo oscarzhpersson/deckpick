@@ -1,5 +1,8 @@
 :root {
   background-color: #FFFFFF;
+  background-size: fill;
+  background-image: linear-gradient(to bottom, #FFFFFF, #BABABA);
+  height: 50%;
 }
 
 .swipeStack {
