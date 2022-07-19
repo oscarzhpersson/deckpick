@@ -103,8 +103,8 @@ function SwipePresenter (props)
                     show_image_modal={show_image_modal}
                     current_card={current_card}
                     /> }
-            <Modal noPadding blur aria-labelledby="modal-title" open={show_image_modal} onClose={() => set_show_image_modal(false)} >
-                { current_card ? <Image objectFit='fill' src={current_card} /> : null }
+            <Modal width='33em' noPadding blur aria-labelledby="modal-title" open={show_image_modal} onClose={() => set_show_image_modal(false)} >
+                { current_card ? <Image css={{ height: '27em', overflow: 'visible' }} objectFit='fill' src={current_card} /> : null }
             </Modal>
         </div>
     )

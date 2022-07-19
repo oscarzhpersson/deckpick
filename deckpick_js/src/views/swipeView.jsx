@@ -47,7 +47,7 @@ function SwipeView(props)
                                 </Col>
                                 <Col>
                                     <Row justify="flex-end">
-                                        <Button bordered rounded auto color='secondary' onClick={() => props.showFullImage(data)} >
+                                        <Button bordered rounded auto color='primary' onClick={() => props.showFullImage(data)} >
                                             <Text
                                                 css={{ color: "white" }}
                                                 size={15}
