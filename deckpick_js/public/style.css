@@ -1,8 +1,14 @@
 :root {
   background-color: #FFFFFF;
   background-size: fill;
-  background-image: linear-gradient(to bottom, #FFFFFF, #BABABA);
+  background-image: linear-gradient(to bottom, #FFFFFF, #BABABA); /* Other candidate - #BABABA or #808080 */
   height: 50%;
+  user-select: none;
+}
+
+.unselectable {
+  user-select: none;
+  pointer-events: none;
 }
 
 .swipeStack {
