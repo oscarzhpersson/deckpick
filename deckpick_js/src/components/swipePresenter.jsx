@@ -63,13 +63,20 @@ function SwipePresenter (props)
 
     React.useEffect(onPromiseChangedACB, [stack_promise]); // When promise changes, run onPromiseChangedACB.
 
-    const onSwipe = (direction, id) => {
+    const onSwipe = (direction, card) => {
 
-        console.log('You swiped: ' + direction + ' on ' + id);
+        console.log('You swiped: ' + direction + ' on ' + card.id);
 
         if (direction === 'right')
         {
-            props.stack_state.saveCard(id);
+            props.stack_state.saveCard(
+                {
+                    id: card.id,
+                    name: card.name,
+                    art: card.image_uris,
+                    uri: card.uri
+                }
+            );
         }
 
         counter--;

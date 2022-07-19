@@ -17,7 +17,7 @@ function SwipeView(props)
             <div key={data.id} style={{ position: "absolute", right: "-10em", top: "-13.5em" }} >
                 <TinderCard 
                     className={"debug_center"} 
-                    onSwipe={(dir) => props.onSwipe(dir, data.id)} 
+                    onSwipe={(dir) => props.onSwipe(dir, data)} 
                     onCardLeftScreen={props.onCardLeftScreen}
                     preventSwipe={['up', 'down']}
                     swipeRequirementType='velocity'
