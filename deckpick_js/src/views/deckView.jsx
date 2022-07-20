@@ -21,7 +21,7 @@ function DeckView (props)
                     open={props.display_deck}
                     closeButton
                     onClose={() => props.toggleDeck(false)}
-                    width='95%'
+                    width='85%'
                     css={{ height: '95vh' }}
                     blur
                     >
