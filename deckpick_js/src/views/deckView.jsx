@@ -1,6 +1,6 @@
 // Library imports.
 import { React } from "react";
-import { Button, Modal, Card, Grid, Image, Text, Col, Row } from "@nextui-org/react";
+import { Button, Modal, Card, Grid, Image, Text, Col, Row, Dropdown } from "@nextui-org/react";
 
 function DeckView (props)
 {
@@ -31,9 +31,13 @@ function DeckView (props)
                         </Grid.Container>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button shadow>
-                            EXPORT
-                        </Button>
+                        <Dropdown>
+                            <Dropdown.Button light>EXPORT</Dropdown.Button>
+                            <Dropdown.Menu>
+                                <Dropdown.Item key="archideck">Archideck</Dropdown.Item>
+                                <Dropdown.Item key="prolog">Prolog</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
                     </Modal.Footer>
                 </Modal>
             </div>
