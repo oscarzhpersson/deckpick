@@ -22,24 +22,19 @@ function DeckView (props)
                     closeButton
                     onClose={() => props.toggleDeck(false)}
                     width='95%'
+                    css={{ height: '95vh' }}
+                    blur
                     >
-                    <Card style={{ height: '85vh'/*, backgroundColor: '#BABABA'*/ }} >
-                        <Card.Header css={{ height: '2em' }}>
-                            <Text h3 weight='normal' >
-                                Your Deck
-                            </Text>
-                        </Card.Header>
-                        <Card.Body>
-                            <Grid.Container gap={1} justify='center'>
-                                { props.deck.map(renderDeck) }
-                            </Grid.Container>
-                        </Card.Body>
-                        <Card.Footer css={{ height: '3em' }}>
-                            <Button size='sm' rounded shadow>
-                                EXPORT
-                            </Button>
-                        </Card.Footer>
-                    </Card>
+                    <Modal.Body>
+                        <Grid.Container gap={1} justify='center'>
+                            { props.deck.map(renderDeck) }
+                        </Grid.Container>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button shadow>
+                            EXPORT
+                        </Button>
+                    </Modal.Footer>
                 </Modal>
             </div>
             <div>
