@@ -69,6 +69,9 @@ function SwipePresenter (props)
 
         if (direction === 'right')
         {
+            // TODO: Remove print statement.
+            console.log(card);
+
             props.stack_state.saveCard(
                 {
                     id: card.id,

@@ -4,6 +4,7 @@ import { NextUIProvider, Image, Text, Col, Row } from '@nextui-org/react';
 
 // Component imports.
 import { SwipePresenter } from '../components/swipePresenter';
+import { DeckPresenter } from '../components/deckPresenter';
 import image from '../assets/svg/wave_1.svg';
 import logo from '../assets/raster/DeckPickLogo.png';
 
@@ -22,6 +23,9 @@ function App(props) {
         <img className='unselectable' src={image} css={{ position: 'relative', width: '100vw', top: '-20%' }} />
         <div className='swipeStack' >
           <SwipePresenter stack_state={props.stack_state} />
+        </div>
+        <div>
+          <DeckPresenter stack_state={props.stack_state} />
         </div>
       </div>
     </NextUIProvider>
